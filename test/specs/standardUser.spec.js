@@ -2,11 +2,10 @@ const standardUserActions = require("../pageobjects/standardUser/standardUserAct
 
 const stuname = "standard_user";
 var password = "secret_sauce";
-
+const count = 3;
 var firstName = "arafat";
 var lastName = "anik";
 var postalCode = "1200";
-const count = 3;
 var TaxPercentage = 0.08;
 
 var productArray = [

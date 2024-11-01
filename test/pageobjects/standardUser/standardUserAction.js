@@ -42,7 +42,10 @@ class stuLoginActons {
             //    await standardUserLocator.stuProductFromList.click();
         }
    //     return productName,productPrice;
+    }
 
+    async clickOnAddToCart() {
+        await standardUserLocator.stuAddToCartLink.click();
     }
 
     async getproductNameFromInventory(count){
@@ -50,11 +53,11 @@ class stuLoginActons {
         const itemNames = [];
         for (let i = 0; i < count; i++) {
             var productName = await productNamefromList[i].getText();
-            itemNames.push(productName);
-                     
+            itemNames.push(productName);             
         }
         return itemNames;
     }
+    
     async getproductPriceFromInventory(count){
         var productPricefromList = standardUserLocator.stugetProductPricefromList;
         const itemPrices = [];
@@ -65,10 +68,6 @@ class stuLoginActons {
          //   console.log(`Product Price: ${productPrice}`);         
         }
         return itemPrices;
-    }
-
-    async clickOnAddToCart() {
-        await standardUserLocator.stuAddToCartLink.click();
     }
 
     async clickOnCheckout() {

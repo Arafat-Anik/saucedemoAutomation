@@ -1,6 +1,7 @@
 
 const louLoginJourney = "./test/specs/lockedOutUser.spec.js";
 const stujourney = "./test/specs/standardUser.spec.js";
+const pgujourney = "./test/specs/performanceGlitchUser.spec.js";
 exports.config = {
     //
     // ====================
@@ -24,9 +25,10 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-  //      louLoginJourney,
-        stujourney,
-    ], 
+     //  louLoginJourney,
+     //  stujourney,
+         pgujourney,
+    ],  
 
 
 

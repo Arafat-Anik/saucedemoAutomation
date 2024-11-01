@@ -22,13 +22,7 @@ class standardUserLocator{
     get stuhamburgerCloseLink(){
         return $("//button[@id='react-burger-cross-btn']");
     }
-    // Get Product Name from List
-    get stugetProductNamefromList(){
-        return $$("//div[contains(@class, 'inventory_item_name')]");
-    }
-    get stugetProductPricefromList(){
-        return $$("//div[contains(@class, 'inventory_item_price')]");
-    }
+
     // Click Add to cart button from List
     get stuAddToCartFromList(){
         return $$("//button[contains(@id,'add-to-cart')]");
@@ -38,6 +32,15 @@ class standardUserLocator{
     get stuAddToCartLink(){
         return $("//a[@class='shopping_cart_link']");
     }
+
+    // Get Product Name from List
+    get stugetProductNamefromList(){
+        return $$("//div[contains(@class, 'inventory_item_name')]");
+    }
+    get stugetProductPricefromList(){
+        return $$("//div[contains(@class, 'inventory_item_price')]");
+    }
+    
 
     get stuCheckoutbutton(){
         return $("//button[@id='checkout']");
@@ -58,6 +61,14 @@ class standardUserLocator{
     get stuCheckOutToContinueLink(){
         return $("//input[@id='continue']");
     }
+
+    get itemTotalPriceCheckout(){
+        return $("//div[contains(@class,'summary_subtotal_label')]");
+    }
+    get itemTotalPriceWithTax(){
+        return $("//div[@class='summary_total_label']");
+    }
+    
     get stuFinishLink(){
         return $("//button[@id='finish']");
     }
@@ -67,14 +78,7 @@ class standardUserLocator{
     get stuLogoutLink(){
         return $("//a[@id='logout_sidebar_link']");
     }
-    get itemTotalPriceCheckout(){
-        return $("//div[contains(@class,'summary_subtotal_label')]");
-    }
-    get itemTotalPriceWithTax(){
-        return $("//div[@class='summary_total_label']");
-    }
-
-
+    
 
 }
 
