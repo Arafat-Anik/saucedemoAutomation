@@ -271,9 +271,9 @@ exports.config = {
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details
      */
-    afterSuite: async function (suite) {
-          await browser.quit();
-    },
+    // afterSuite: async function (suite) {
+    //       await browser.quit();
+    // },
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name
