@@ -50,7 +50,7 @@ describe("Standard User journey", () => {
         var price = await standardUserActions.getproductPriceFromInventory(count)
         //   console.log(`Spec price ${typeof price}`);
         //    await browser.pause(2000);
-        
+
         let calculatedTotal = 0;
         for (let i = 0; i < price.length; i++) {
             calculatedTotal += price[i];
@@ -59,7 +59,7 @@ describe("Standard User journey", () => {
         const itemPrice = await standardUserActions.getItemTotalPrice();
         console.log(`Item Price ${typeof itemPrice}`);
         expect(calculatedTotal).toEqual(itemPrice);
-        
+
         //
         const expectedTotal = calculatedTotal + (calculatedTotal * TaxPercentage);
         const totalPricewithTax = await standardUserActions.getItemTotalPriceWithTax();
@@ -72,6 +72,11 @@ describe("Standard User journey", () => {
         const actualSuccessfulMessge = await standardUserActions.getSuccessfulMessage();
         //    expect(actualSuccessfulMessge).toContain(initiaiSuccessfulMessage);
         expect(actualSuccessfulMessge).toEqual(initiaiSuccessfulMessage);
+
+        const initialSuccessfulMesageDetails = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
+        const actualSuccessfulMesageDetails = await standardUserActions.getSuccessfulMessageDetails();
+        expect(initialSuccessfulMesageDetails).toEqual(actualSuccessfulMesageDetails);
+        
 
         await standardUserActions.clickHamburgerOpenMenu();
         await standardUserActions.clickOnResetAppState();

@@ -25,18 +25,21 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-     //  louLoginJourney,
-     //  stujourney,
-         pgujourney,
-    ],  
-
-
-
+    //    louLoginJourney,
+    //    stujourney,
+    //    pgujourney,
+    ],
+    
+    suites: {
+        allspecRun: [
+            [louLoginJourney, stujourney, pgujourney]
+        ],
+      },
 
     // Patterns to exclude.
-    exclude: [
-        // 'path/to/excluded/files'
-    ],
+    // exclude: [
+    //     // 'path/to/excluded/files'
+    // ],
     //
     // ============
     // Capabilities
@@ -136,6 +139,12 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     // reporters: ['dot'],
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
+
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -242,14 +251,28 @@ exports.config = {
      */
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
+    
+    afterTest: async function (
+        test,
+        context,
+        { error, result, duration, passed, retries }
+      ) {
+        if (error) {
+          const screenshot = await browser.takeScreenshot();
+          allure.addAttachment("Screenshot",Buffer.from(screenshot, "base64"),
+          "failure/png"
+          );
+        }
+      },
 
 
     /**
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details
      */
-    // afterSuite: function (suite) {
-    // },
+    afterSuite: async function (suite) {
+        await browser.quit();
+     },
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name

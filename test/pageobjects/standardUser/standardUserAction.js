@@ -112,6 +112,9 @@ class stuLoginActons {
     async getSuccessfulMessage() {
         return await standardUserLocator.successfulMessage.getText();
     }
+    async getSuccessfulMessageDetails() {
+        return await standardUserLocator.successfulmessageDetails.getText();
+    }
 
     async clickOnLogoutButton() {
         await standardUserLocator.stuLogoutLink.click();

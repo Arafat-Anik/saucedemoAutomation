@@ -58,7 +58,6 @@ describe("Performance glitch User journey", () => {
         
         const itemPrice = await performanceGlitchUserAction.getItemTotalPrice();
         expect(calculatedTotal).toEqual(itemPrice);
-        //
         const expectedTotal = calculatedTotal + (calculatedTotal * TaxPercentage);
         const totalPricewithTax = await performanceGlitchUserAction.getItemTotalPriceWithTax();
         expect(expectedTotal).toBeCloseTo(totalPricewithTax);  //
@@ -69,6 +68,10 @@ describe("Performance glitch User journey", () => {
         const initiaiSuccessfulMessage = "Thank you for your order!";
         const actualSuccessfulMessge = await performanceGlitchUserAction.getSuccessfulMessage();
         expect(actualSuccessfulMessge).toEqual(initiaiSuccessfulMessage);
+
+        const initialSuccessfulMesageDetails = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
+        const actualSuccessfulMesageDetails = await performanceGlitchUserAction.getSuccessfulMessageDetails();
+        expect(initialSuccessfulMesageDetails).toEqual(actualSuccessfulMesageDetails);
 
         await performanceGlitchUserAction.clickHamburgerOpenMenu();
         await performanceGlitchUserAction.clickOnResetAppState();

@@ -82,6 +82,11 @@ class performanceUserLocator {
     get successfulMessage() {
         return $("//h2[@class='complete-header']");
     }
+
+    get successfulmessageDetails(){
+        return $("//div[@class='complete-text']");
+    }
+
     get pguLogoutLink() {
         return $("//a[@id='logout_sidebar_link']");
     }

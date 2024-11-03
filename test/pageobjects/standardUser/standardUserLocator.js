@@ -75,6 +75,11 @@ class standardUserLocator{
     get successfulMessage(){
         return $("//h2[@class='complete-header']");
     }
+
+    get successfulmessageDetails(){
+        return $("//div[@class='complete-text']");
+    }
+
     get stuLogoutLink(){
         return $("//a[@id='logout_sidebar_link']");
     }

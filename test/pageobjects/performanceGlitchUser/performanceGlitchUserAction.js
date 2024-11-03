@@ -114,6 +114,10 @@ class pguActions {
         return await performanceUserLocator.successfulMessage.getText();
     }
 
+    async getSuccessfulMessageDetails() {
+        return await performanceUserLocator.successfulmessageDetails.getText();
+    }
+
     async clickOnLogoutButton() {
         await performanceUserLocator.pguLogoutLink.click();
     }
