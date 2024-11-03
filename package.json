@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "allspecsRun": "wdio run ./wdio.conf.js --suite allspecRun",
+    "allspecsRun": "wdio run ./wdio.conf.js --suite allspecRun",
     "getReport": "allure generate allure-results --clean && allure open"
   },
   "author": "Arafat Anik",

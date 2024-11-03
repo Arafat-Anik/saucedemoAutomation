@@ -15,7 +15,7 @@ describe("Locked Out User journey", () => {
         const actualerrorMessge = await lockedOutuserActions.geterrorMessage();
     //    expect(actualerrorMessge).toContain(initialErrorMessage);
         expect(actualerrorMessge).toEqual(initialErrorMessage);
-
         await browser.pause(2000);
+        await browser.refresh();      // Page refresh
     }) 
 })

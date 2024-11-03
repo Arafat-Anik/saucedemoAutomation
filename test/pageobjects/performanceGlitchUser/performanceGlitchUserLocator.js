@@ -85,7 +85,7 @@ class performanceUserLocator {
 
     get successfulmessageDetails(){
         return $("//div[@class='complete-text']");
-    }
+    }
 
     get pguLogoutLink() {
         return $("//a[@id='logout_sidebar_link']");

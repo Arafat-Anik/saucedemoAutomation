@@ -25,9 +25,9 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-    //    louLoginJourney,
-    //    stujourney,
-    //    pgujourney,
+          louLoginJourney,
+          stujourney,
+          pgujourney,
     ],
     
     suites: {
@@ -262,8 +262,9 @@ exports.config = {
           allure.addAttachment("Screenshot",Buffer.from(screenshot, "base64"),
           "failure/png"
           );
-        }
-      },
+        }
+        
+    },
 
 
     /**
@@ -271,8 +272,8 @@ exports.config = {
      * @param {object} suite suite details
      */
     afterSuite: async function (suite) {
-        await browser.quit();
-     },
+          await browser.quit();
+    },
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name
