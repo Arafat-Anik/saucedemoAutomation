@@ -58,7 +58,6 @@ describe("Performance glitch User journey", () => {
         
         const itemPrice = await performanceGlitchUserAction.getItemTotalPrice();
         expect(calculatedTotal).toEqual(itemPrice);
-        
         //
         const expectedTotal = calculatedTotal + (calculatedTotal * TaxPercentage);
         const totalPricewithTax = await performanceGlitchUserAction.getItemTotalPriceWithTax();
