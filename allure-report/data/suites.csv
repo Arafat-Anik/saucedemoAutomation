@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7695","Should performance glitch User sucessfully Login","","Sun Nov 03 23:39:31 BDT 2024","passed","Sun Nov 03 23:39:38 BDT 2024","","Performance glitch User journey","",""
+"","5808","standard user Menubar open close","","Sun Nov 03 23:38:57 BDT 2024","passed","Sun Nov 03 23:39:03 BDT 2024","","Standard User journey","",""
+"","32983","Performance Glitch User Add to cart Journey","","Sun Nov 03 23:39:50 BDT 2024","passed","Sun Nov 03 23:40:23 BDT 2024","","Performance glitch User journey","",""
+"","12038","Performance Glitch User Menubar open close","","Sun Nov 03 23:39:38 BDT 2024","passed","Sun Nov 03 23:39:50 BDT 2024","","Performance glitch User journey","",""
+"","27907","standard user Add to cart","","Sun Nov 03 23:39:03 BDT 2024","passed","Sun Nov 03 23:39:31 BDT 2024","","Standard User journey","",""
+"","7029","should locked out user verify error message","","Sun Nov 03 23:38:47 BDT 2024","passed","Sun Nov 03 23:38:54 BDT 2024","","Locked Out User journey","",""
+"","2720","should standard user successfully login","","Sun Nov 03 23:38:54 BDT 2024","passed","Sun Nov 03 23:38:57 BDT 2024","","Standard User journey","",""
