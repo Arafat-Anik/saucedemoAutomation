@@ -24,7 +24,7 @@ To add a full WebdriverIO setup:
 npm init wdio@latest
 ```
 ## Run Code
-## To run suites for sequential way, execute: 
+To run suites for sequential way, execute: 
 ```
 npm run allspecsRun
 ```
