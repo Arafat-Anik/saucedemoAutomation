@@ -52,9 +52,9 @@ To run specs, execute:
 ```
 npm run test
 ```
-To run suites, execute: 
+To run All suites, execute: 
 ```
-npm run runspecFiles
+npm run allspecsRun
 ```
 ## To get report, execute following command: 
 ```
