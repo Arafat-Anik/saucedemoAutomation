@@ -7,10 +7,7 @@ var firstName = "arafat";
 var lastName = "anik";
 var postalCode = "1200";
 var TaxPercentage = 0.08;
-
-var productArray = [
-    'Test.allTheThings() T-Shirt (Red)'   
-];
+var productArray = ['Test.allTheThings() T-Shirt (Red)'];
 
 describe("Performance glitch User journey", () => {
     it("Should performance glitch User sucessfully Login", async () => {
@@ -27,8 +24,6 @@ describe("Performance glitch User journey", () => {
         await performanceGlitchUserAction.clickOnHamburgerCloseMenu();
         await browser.pause(2000);
         await browser.refresh();      // Page refresh
-        await browser.pause(2000);
-
     })
 
     it("Performance Glitch User Add to cart Journey", async () => {
@@ -41,13 +36,18 @@ describe("Performance glitch User journey", () => {
         await browser.pause(2000);
         await performanceGlitchUserAction.clickOnAddtoCartButton();
         await browser.pause(2000);
+    })
+
+    it("Performance Glitch User Checkout Info Journey", async () => {
         await performanceGlitchUserAction.clickOnCheckout();
         await performanceGlitchUserAction.checkOutfirstname(firstName);
         await performanceGlitchUserAction.checkOutlastname(lastName);
         await performanceGlitchUserAction.checkOutpostalcode(postalCode);       
         await browser.pause(2000);
         await performanceGlitchUserAction.clickContinueLink();
+    })
 
+    it("Performance Glitch User Total Price and With Tax verify Journey", async () => {
         var name = await performanceGlitchUserAction.getProductNameFromInventory(count);
         expect(name).toEqual(productArray);
         var price = await performanceGlitchUserAction.getProductPriceFromInventory(count);
@@ -61,10 +61,11 @@ describe("Performance glitch User journey", () => {
         const expectedTotal = calculatedTotal + (calculatedTotal * TaxPercentage);
         const totalPricewithTax = await performanceGlitchUserAction.getItemTotalPriceWithTax();
         expect(expectedTotal).toBeCloseTo(totalPricewithTax);  //
-
         await performanceGlitchUserAction.clickFinishLink();
         await browser.pause(2000);
+    })
 
+    it("Performance Glitch User Successful message Verify Journey", async () => {
         const initiaiSuccessfulMessage = "Thank you for your order!";
         const actualSuccessfulMessge = await performanceGlitchUserAction.getSuccessfulMessage();
         expect(actualSuccessfulMessge).toEqual(initiaiSuccessfulMessage);
@@ -72,13 +73,12 @@ describe("Performance glitch User journey", () => {
         const initialSuccessfulMesageDetails = "Your order has been dispatched, and will arrive just as fast as the pony can get there!";
         const actualSuccessfulMesageDetails = await performanceGlitchUserAction.getSuccessfulMessageDetails();
         expect(initialSuccessfulMesageDetails).toEqual(actualSuccessfulMesageDetails);
+    })
 
+    it("Performance Glitch User Menubar open,Close and Logout", async () => {
         await performanceGlitchUserAction.clickHamburgerOpenMenu();
         await performanceGlitchUserAction.clickOnResetAppState();
         await browser.pause(2000);
-        await performanceGlitchUserAction.clickOnLogoutButton();
-        await browser.pause(2000);
-        
+        await performanceGlitchUserAction.clickOnLogoutButton();   
     })
-
 })

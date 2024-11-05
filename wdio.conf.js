@@ -64,7 +64,10 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+        "goog:chromeOptions":{
+            args: ["--disable-extensions"]
+        }
     }],
 
     //
@@ -74,7 +77,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -102,7 +105,7 @@ exports.config = {
     baseUrl: 'https://www.saucedemo.com/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -271,9 +274,10 @@ exports.config = {
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details
      */
-    // afterSuite: async function (suite) {
-    //       await browser.quit();
-    // },
+    //  afterSuite: async function (suite) { We need to add this reason in readme file
+    //        await browser.browserClose();
+    //  },
+    
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name
