@@ -60,6 +60,9 @@ npm run allspecsRun
 ```
 npm run getReport
 ```
+## Note: 
+In wdio.config.js, commented on the aftersuits functions, because after run the webdriverIO version 9.2.2, In this version, there is some issues in the browser.quit() function.
+```
 
 ## Screenshot
 ![Allure Report](<Allure report.png>)
