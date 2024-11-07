@@ -66,7 +66,7 @@ In wdio.config.js, commented on the aftersuits functions, because after run the 
 ## Screenshot
 ![Allure Report](<Allure report.png>)
 
-## A summary of this project at a glance
+## A summary of this project:
 1. Try to Login to this [Sauce Demo](https://www.saucedemo.com/) site with locked_out_user
     - login with user name: `locked_out_user` and Password: `secret_sauce`
     - Successfully executing the error message with the given user ID and password.
